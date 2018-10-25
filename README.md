@@ -1,6 +1,6 @@
 # README
 
-Projet The_Gossip_Project réalisé par Clément Baldy (@Clemoun) et Javier Ramon (@Javi)
+Projet The_Gossip_Project réalisé par Clément Baldy (@Clem B) et Javier Ramon (@Javi)
 
 ### Avant de commencer
   - Cloner le repo en faisant un git clone.
