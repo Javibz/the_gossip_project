@@ -2,6 +2,7 @@
 User.all.destroy_all
 City.all.destroy_all
 Gossip.all.destroy_all
+Tag.all.destroy_all
 
 
 10.times do |c|
@@ -22,4 +23,15 @@ end
 
 20.times do |index|
   Gossip.find(Gossip.first.id + index).tags << Tag.find(rand(Tag.first.id..Tag.last.id))
+end
+
+20.times do |m|
+  PrivateMessage.create(content: Faker::StarWars.quote, date: Faker::Date.backward(100), sender_id:rand(User.first.id..User.last.id))
+end
+
+20.times do |t|
+  PrivateMessage.find(PrivateMessage.first.id + t).recipients << User.find(rand(User.first.id..User.last.id))
+  PrivateMessage.find(PrivateMessage.first.id + t).recipients << User.find(rand(User.first.id..User.last.id))
+  PrivateMessage.find(PrivateMessage.first.id + t).recipients << User.find(rand(User.first.id..User.last.id))
+  PrivateMessage.find(PrivateMessage.first.id + t).recipients << User.find(rand(User.first.id..User.last.id))
 end
