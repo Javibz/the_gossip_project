@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Projet The_Gossip_Project réalisé par Clément Baldy (@Clemoun) et Javier Ramon (@Javi)
 
-Things you may want to cover:
+### Avant de commencer
+  - Cloner le repo en faisant un git clone.
+  - Sur la console lancer ```bundle install``` pour pouvoir utiliser les gems.
+  - Sur la console écrire ```rails db:migrate``` pour créer la BDD.
+  
 
-* Ruby version
+### Explication du projet
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- On a crée six models
+  - User
+  - City
+  - Gossip
+  - Tag
+  - Comment
+  - Like
+  
+- Ensuite on a lie chaque model avec les différents models.
+- Dans le seed on a crée des boucles pour rémplir les différentes tables avec ses assosiations.
