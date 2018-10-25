@@ -3,7 +3,9 @@ User.all.destroy_all
 City.all.destroy_all
 Gossip.all.destroy_all
 Tag.all.destroy_all
-
+PrivateMessage.all.destroy_all
+Like.all.destroy_all
+Comment.all.destroy_all
 
 10.times do |c|
   City.create(name:Faker::Nation.capital_city, postal_code:rand(1000..9000))
@@ -34,4 +36,13 @@ end
   PrivateMessage.find(PrivateMessage.first.id + t).recipients << User.find(rand(User.first.id..User.last.id))
   PrivateMessage.find(PrivateMessage.first.id + t).recipients << User.find(rand(User.first.id..User.last.id))
   PrivateMessage.find(PrivateMessage.first.id + t).recipients << User.find(rand(User.first.id..User.last.id))
+end
+
+40.times do |c|
+  Comment.create(content: Faker::StarWars.quote, user_id: rand(User.first.id..User.last.id), gossip_id: rand(Gossip.first.id..Gossip.last.id))
+end
+
+15.times do |l|
+  Like.create(user_id: rand(User.first.id..User.last.id), content_id: rand(Gossip.first.id..Gossip.last.id))
+  Like.create(user_id: rand(User.first.id..User.last.id), content_id: rand(Comment.first.id..Comment.last.id))
 end
