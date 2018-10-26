@@ -43,6 +43,6 @@ end
 end
 
 15.times do |l|
-  Like.create(user_id: rand(User.first.id..User.last.id), content_id: rand(Gossip.first.id..Gossip.last.id))
-  Like.create(user_id: rand(User.first.id..User.last.id), content_id: rand(Comment.first.id..Comment.last.id))
+  Like.create(user_id: rand(User.first.id..User.last.id), content_id: rand(Gossip.first.id..Gossip.last.id), content_type: "Gossip")
+  Like.create(user_id: rand(User.first.id..User.last.id), content_id: rand(Comment.first.id..Comment.last.id), content_type: "Comment")
 end
